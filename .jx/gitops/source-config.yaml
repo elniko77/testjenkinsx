@@ -1,0 +1,16 @@
+apiVersion: gitops.jenkins-x.io/v1alpha1
+kind: SourceConfig
+metadata:
+  creationTimestamp: null
+spec:
+  groups:
+  - owner: elniko77
+    provider: https://github.com
+    providerKind: github
+    repositories:
+    - name: https-github.com-elniko77-ejemplopython
+    scheduler: in-repo
+  slack:
+    channel: '#jenkins-x-pipelines'
+    kind: failureOrNextSuccess
+    pipeline: release
